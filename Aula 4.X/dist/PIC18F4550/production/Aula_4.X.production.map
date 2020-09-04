@@ -3,10 +3,10 @@ Microchip MPLAB XC8 Compiler V1.41 ()
 Linker command line:
 
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.41\dat\en_msgs.txt -cs \
-  -h+dist/default/production\Aula_4.X.production.sym \
-  --cmf=dist/default/production\Aula_4.X.production.cmf -z -Q18F4550 \
-  -oE:\Tmp-A\s970.2 -Mdist/default/production/Aula_4.X.production.map -E1 \
-  -ver=XC8 -ASTACK=060h-07ffh -pstack=STACK -ACODE=00h-0627Fh \
+  -h+dist/PIC18F4550/production\Aula_4.X.production.sym \
+  --cmf=dist/PIC18F4550/production\Aula_4.X.production.cmf -z -Q18F4550 \
+  -oE:\Tmp-A\s30g.2 -Mdist/PIC18F4550/production/Aula_4.X.production.map \
+  -E1 -ver=XC8 -ASTACK=060h-07ffh -pstack=STACK -ACODE=00h-0627Fh \
   -ACONST=00h-0627Fh -ASMALLCONST=0800h-08FFhx90,06200h-0627Fh \
   -AMEDIUMCONST=0800h-0627Fh -ACOMRAM=01h-05Fh -AABS1=00h-07FFh \
   -ABIGRAM=01h-07FFh -ARAM=060h-0FFh,0100h-01FFhx7 -ABANK0=060h-0FFh \
@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  E:\Tmp-A\s970.obj dist/default/production\Aula_4.X.production.obj 
+  E:\Tmp-A\s30g.obj dist/PIC18F4550/production\Aula_4.X.production.obj 
 
 Object code version is 3.11
 
@@ -34,11 +34,11 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-E:\Tmp-A\s970.obj
+E:\Tmp-A\s30g.obj
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
-dist/default/production\Aula_4.X.production.obj
+dist/PIC18F4550/production\Aula_4.X.production.obj
                 smallconst                          800      800       36      400       0
                 text1                               894      894       22      41B       0
                 text0                               86C      86C       28      41B       0

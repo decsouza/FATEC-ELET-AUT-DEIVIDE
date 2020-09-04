@@ -180,9 +180,9 @@ idloc 200000 200007 IDLOC 200000 0
 bssCOMRAM 1 1B COMRAM 1 1
 cinit 836 8BC CODE 836 0
 %locals
-dist/default/production\Aula_4.X.production.obj
+dist/PIC18F4550/production\Aula_4.X.production.obj
 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f4550.h
-E:\Tmp-A\s970.
+E:\Tmp-A\s30g.
 802 836 0 CODE 0
 804 836 0 CODE 0
 807 836 0 CODE 0
