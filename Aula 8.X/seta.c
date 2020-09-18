@@ -64,10 +64,13 @@ void main(void)
         {
             setaEsqA = 0;
             delay_ms(100);
+            setaEsqA = 1;
             setaEsqB = 0;
             delay_ms(100);
+            setaEsqB = 1;
             setaEsqC = 0;
             delay_ms(100);
+            setaEsqC = 1;
             setaEsqD = 0;
             delay_ms(100);
             setaEsqA = 1;
@@ -80,10 +83,13 @@ void main(void)
         {
             setaDirA = 0;
             delay_ms(100);
+            setaDirA = 1;
             setaDirB = 0;
             delay_ms(100);
+            setaDirB = 1;
             setaDirC = 0;
             delay_ms(100);
+            setaDirC = 1;
             setaDirD = 0;
             delay_ms(100);
             setaDirA = 1;

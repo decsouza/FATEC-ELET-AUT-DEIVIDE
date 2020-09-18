@@ -3675,133 +3675,151 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;seta.c: 66: delay_ms(100);
 "66
 [e ( _delay_ms (1 -> -> 100 `i `ui ]
-[; ;seta.c: 67: PORTBbits.RB5 = 0;
+[; ;seta.c: 67: PORTBbits.RB4 = 1;
 "67
-[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-[; ;seta.c: 68: delay_ms(100);
+[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+[; ;seta.c: 68: PORTBbits.RB5 = 0;
 "68
-[e ( _delay_ms (1 -> -> 100 `i `ui ]
-[; ;seta.c: 69: PORTBbits.RB6 = 0;
+[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
+[; ;seta.c: 69: delay_ms(100);
 "69
-[e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
-[; ;seta.c: 70: delay_ms(100);
-"70
 [e ( _delay_ms (1 -> -> 100 `i `ui ]
-[; ;seta.c: 71: PORTBbits.RB7 = 0;
+[; ;seta.c: 70: PORTBbits.RB5 = 1;
+"70
+[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
+[; ;seta.c: 71: PORTBbits.RB6 = 0;
 "71
-[e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
+[e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
 [; ;seta.c: 72: delay_ms(100);
 "72
 [e ( _delay_ms (1 -> -> 100 `i `ui ]
-[; ;seta.c: 73: PORTBbits.RB4 = 1;
+[; ;seta.c: 73: PORTBbits.RB6 = 1;
 "73
-[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
-[; ;seta.c: 74: PORTBbits.RB5 = 1;
-"74
-[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
-[; ;seta.c: 75: PORTBbits.RB6 = 1;
-"75
 [e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
-[; ;seta.c: 76: PORTBbits.RB7 = 1;
-"76
-[e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
-[; ;seta.c: 77: delay_ms(100);
-"77
+[; ;seta.c: 74: PORTBbits.RB7 = 0;
+"74
+[e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
+[; ;seta.c: 75: delay_ms(100);
+"75
 [e ( _delay_ms (1 -> -> 100 `i `ui ]
+[; ;seta.c: 76: PORTBbits.RB4 = 1;
+"76
+[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+[; ;seta.c: 77: PORTBbits.RB5 = 1;
+"77
+[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
+[; ;seta.c: 78: PORTBbits.RB6 = 1;
 "78
+[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
+[; ;seta.c: 79: PORTBbits.RB7 = 1;
+"79
+[e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
+[; ;seta.c: 80: delay_ms(100);
+"80
+[e ( _delay_ms (1 -> -> 100 `i `ui ]
+"81
 }
 [e :U 371 ]
-[; ;seta.c: 78: }
-[; ;seta.c: 79: if(PORTEbits.RE1 == 0)
-"79
-[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 372  ]
-[; ;seta.c: 80: {
-"80
-{
-[; ;seta.c: 81: PORTBbits.RB3 = 0;
-"81
-[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
-[; ;seta.c: 82: delay_ms(100);
+[; ;seta.c: 81: }
+[; ;seta.c: 82: if(PORTEbits.RE1 == 0)
 "82
-[e ( _delay_ms (1 -> -> 100 `i `ui ]
-[; ;seta.c: 83: PORTBbits.RB2 = 0;
+[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 372  ]
+[; ;seta.c: 83: {
 "83
-[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
-[; ;seta.c: 84: delay_ms(100);
+{
+[; ;seta.c: 84: PORTBbits.RB3 = 0;
 "84
-[e ( _delay_ms (1 -> -> 100 `i `ui ]
-[; ;seta.c: 85: PORTBbits.RB1 = 0;
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+[; ;seta.c: 85: delay_ms(100);
 "85
-[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
-[; ;seta.c: 86: delay_ms(100);
-"86
 [e ( _delay_ms (1 -> -> 100 `i `ui ]
-[; ;seta.c: 87: PORTBbits.RB0 = 0;
+[; ;seta.c: 86: PORTBbits.RB3 = 1;
+"86
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+[; ;seta.c: 87: PORTBbits.RB2 = 0;
 "87
-[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
 [; ;seta.c: 88: delay_ms(100);
 "88
 [e ( _delay_ms (1 -> -> 100 `i `ui ]
-[; ;seta.c: 89: PORTBbits.RB3 = 1;
+[; ;seta.c: 89: PORTBbits.RB2 = 1;
 "89
-[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
-[; ;seta.c: 90: PORTBbits.RB2 = 1;
-"90
 [e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
-[; ;seta.c: 91: PORTBbits.RB1 = 1;
+[; ;seta.c: 90: PORTBbits.RB1 = 0;
+"90
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+[; ;seta.c: 91: delay_ms(100);
 "91
-[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-[; ;seta.c: 92: PORTBbits.RB0 = 1;
-"92
-[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
-[; ;seta.c: 93: delay_ms(100);
-"93
 [e ( _delay_ms (1 -> -> 100 `i `ui ]
+[; ;seta.c: 92: PORTBbits.RB1 = 1;
+"92
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+[; ;seta.c: 93: PORTBbits.RB0 = 0;
+"93
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+[; ;seta.c: 94: delay_ms(100);
 "94
+[e ( _delay_ms (1 -> -> 100 `i `ui ]
+[; ;seta.c: 95: PORTBbits.RB3 = 1;
+"95
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+[; ;seta.c: 96: PORTBbits.RB2 = 1;
+"96
+[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
+[; ;seta.c: 97: PORTBbits.RB1 = 1;
+"97
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+[; ;seta.c: 98: PORTBbits.RB0 = 1;
+"98
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
+[; ;seta.c: 99: delay_ms(100);
+"99
+[e ( _delay_ms (1 -> -> 100 `i `ui ]
+"100
 }
 [e :U 372 ]
-"95
+"101
 }
 [e :U 368 ]
 "61
 [e $U 369  ]
 [e :U 370 ]
-[; ;seta.c: 94: }
-[; ;seta.c: 95: }
-[; ;seta.c: 96: return;
-"96
+[; ;seta.c: 100: }
+[; ;seta.c: 101: }
+[; ;seta.c: 102: return;
+"102
 [e $UE 367  ]
-[; ;seta.c: 97: }
-"97
+[; ;seta.c: 103: }
+"103
 [e :UE 367 ]
 }
-"99
+"105
 [v _delay_ms `(v ~T0 @X0 1 ef1`ui ]
-"100
+"106
 {
-[; ;seta.c: 99: void delay_ms(unsigned int tempodeatraso)
-[; ;seta.c: 100: {
+[; ;seta.c: 105: void delay_ms(unsigned int tempodeatraso)
+[; ;seta.c: 106: {
 [e :U _delay_ms ]
-"99
+"105
 [v _tempodeatraso `ui ~T0 @X0 1 r1 ]
-"100
+"106
 [f ]
-[; ;seta.c: 101: while(--tempodeatraso){
-"101
+[; ;seta.c: 107: while(--tempodeatraso){
+"107
 [e $U 374  ]
 [e :U 375 ]
 {
-[; ;seta.c: 102: _delay((unsigned long)((1)*(48000000/4000.0)));
-"102
+[; ;seta.c: 108: _delay((unsigned long)((1)*(48000000/4000.0)));
+"108
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"103
+"109
 }
 [e :U 374 ]
-"101
+"107
 [e $ != =- _tempodeatraso -> -> 1 `i `ui -> -> 0 `i `ui 375  ]
 [e :U 376 ]
-[; ;seta.c: 103: }
-[; ;seta.c: 104: }
-"104
+[; ;seta.c: 109: }
+[; ;seta.c: 110: }
+"110
 [e :UE 373 ]
 }

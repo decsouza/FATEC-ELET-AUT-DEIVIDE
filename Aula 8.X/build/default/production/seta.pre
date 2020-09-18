@@ -4887,10 +4887,13 @@ if(PORTEbits.RE0 == 0)
 {
 PORTBbits.RB4 = 0;
 delay_ms(100);
+PORTBbits.RB4 = 1;
 PORTBbits.RB5 = 0;
 delay_ms(100);
+PORTBbits.RB5 = 1;
 PORTBbits.RB6 = 0;
 delay_ms(100);
+PORTBbits.RB6 = 1;
 PORTBbits.RB7 = 0;
 delay_ms(100);
 PORTBbits.RB4 = 1;
@@ -4903,10 +4906,13 @@ if(PORTEbits.RE1 == 0)
 {
 PORTBbits.RB3 = 0;
 delay_ms(100);
+PORTBbits.RB3 = 1;
 PORTBbits.RB2 = 0;
 delay_ms(100);
+PORTBbits.RB2 = 1;
 PORTBbits.RB1 = 0;
 delay_ms(100);
+PORTBbits.RB1 = 1;
 PORTBbits.RB0 = 0;
 delay_ms(100);
 PORTBbits.RB3 = 1;
