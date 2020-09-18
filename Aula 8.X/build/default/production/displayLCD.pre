@@ -1,5 +1,5 @@
 
-# 1 "Pisca_led.c"
+# 1 "displayLCD.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -4737,68 +4737,38 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
+# 174 "displayLCD.h"
+extern void ConfiguraLCD(void);
+
+# 184
+extern void EscreveComandoLCD(unsigned char cmd);
+
+# 197
+extern void EnderecoCursor(unsigned char endereco);
+
+# 211
+extern void PosicaoCursorLCD(unsigned char linha, unsigned char coluna);
+
+# 223
+extern void EscreveCaractereLCD(char data);
+
+# 236
+extern void EscreveInteiroLCD(int valor);
+
+# 252
+extern void EscreveFloatLCD(float valor, char formatacao);
+
+# 265
+extern void EscreveFraseRamLCD(char *buffer);
+
+# 278
+extern void EscreveFraseLCD(const char *buffer);
+
+# 295
+extern void CriaCaractereLCD(unsigned char endereco, const char *buffer);
+
 # 4 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\__size_t.h"
 typedef unsigned size_t;
-
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdio.h"
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\errno.h"
-extern int errno;
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
 
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdlib.h"
 typedef unsigned short wchar_t;
@@ -4869,30 +4839,382 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 30 "Pisca_led.c"
-void delay_ms(unsigned int temodeatraso);
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
 
-# 44
-void main()
+# 54 "displayLCD.c"
+void Delay(void)
 {
-ADCON1 = 0X0F;
-TRISB = 0X00;
-LATB = 0XFF;
-PORTB = 0X00;
+unsigned char Cnt1, Cnt2;
 
-while(1){
-PORTBbits.RB7 = 1;
-delay_ms(500);
-PORTBbits.RB7 = 0;
-delay_ms(500);
-}
-
-}
-
-# 71
-void delay_ms(unsigned int tempodeatraso)
+for(Cnt1 = 0; Cnt1<30; Cnt1++)
 {
-while(--tempodeatraso){
-_delay((unsigned long)((1)*(48000000/4000.0)));
+__nop();
+for(Cnt2 = 0; Cnt2<30; Cnt2++)
+{
+__nop();
 }
+}
+}
+
+# 80
+void ConfiguraLCD(void)
+{
+
+TRISDbits.RD2 = 0;
+TRISDbits.RD1 = 0;
+TRISDbits.RD0 = 0;
+
+
+TRISDbits.RD4=0;
+TRISDbits.RD5=0;
+TRISDbits.RD6=0;
+TRISDbits.RD7=0;
+
+# 98
+PORTDbits.RD2 = 0;
+PORTDbits.RD1 = 0;
+PORTDbits.RD0 = 0;
+
+
+
+PORTDbits.RD7=0;
+PORTDbits.RD6=0;
+PORTDbits.RD5=1;
+PORTDbits.RD4=1;
+
+
+
+
+_delay((unsigned long)((15)*(48000000/4000.0)));
+
+
+
+PORTDbits.RD0 = 1;
+Delay();
+PORTDbits.RD0 = 0;
+Delay();
+
+
+
+
+_delay((unsigned long)((5)*(48000000/4000.0)));
+
+
+PORTDbits.RD0 = 1;
+Delay();
+PORTDbits.RD0 = 0;
+Delay();
+
+
+
+
+_delay((unsigned long)((5)*(48000000/4000.0)));
+
+
+PORTDbits.RD0 = 1;
+Delay();
+PORTDbits.RD0 = 0;
+Delay();
+
+
+PORTDbits.RD7=0;
+PORTDbits.RD6=0;
+PORTDbits.RD5=1;
+PORTDbits.RD4=0;
+
+
+
+PORTDbits.RD0 = 1;
+Delay();
+PORTDbits.RD0 = 0;
+Delay();
+
+
+
+EscreveComandoLCD(0b00101000);
+EscreveComandoLCD(0b00000110);
+EscreveComandoLCD(0b00001110);
+EscreveComandoLCD(0b00000001);
+}
+
+# 172
+void EscreveComandoLCD(unsigned char cmd)
+{
+
+PORTDbits.RD2 = 0;
+PORTDbits.RD1 = 0;
+PORTDbits.RD0 = 0;
+
+
+if(cmd&0b00010000){PORTDbits.RD4=1;}
+else {PORTDbits.RD4=0;}
+if(cmd&0b00100000){PORTDbits.RD5=1;}
+else {PORTDbits.RD5=0;}
+if(cmd&0b01000000){PORTDbits.RD6=1;}
+else {PORTDbits.RD6=0;}
+if(cmd&0b10000000){PORTDbits.RD7=1;}
+else {PORTDbits.RD7=0;}
+
+
+PORTDbits.RD0 = 1;
+Delay();
+PORTDbits.RD0 = 0;
+Delay();
+
+
+if(cmd&0b00000001){PORTDbits.RD4=1;}
+else {PORTDbits.RD4=0;}
+if(cmd&0b00000010){PORTDbits.RD5=1;}
+else {PORTDbits.RD5=0;}
+if(cmd&0b00000100){PORTDbits.RD6=1;}
+else {PORTDbits.RD6=0;}
+if(cmd&0b00001000){PORTDbits.RD7=1;}
+else {PORTDbits.RD7=0;}
+
+
+PORTDbits.RD0 = 1;
+Delay();
+PORTDbits.RD0 = 0;
+Delay();
+
+
+
+
+if (cmd==0x01 || cmd==0x02 || cmd==0x03)
+{ Delay(); }
+}
+
+# 229
+void EnderecoCursor(unsigned char endereco)
+{
+
+PORTDbits.RD2 = 0;
+PORTDbits.RD1 = 0;
+PORTDbits.RD0 = 0;
+
+
+PORTDbits.RD7 = 1;
+if(endereco&0b00010000){PORTDbits.RD4=1;}
+else {PORTDbits.RD4=0;}
+if(endereco&0b00100000){PORTDbits.RD5=1;}
+else {PORTDbits.RD5=0;}
+if(endereco&0b01000000){PORTDbits.RD6=1;}
+else {PORTDbits.RD6=0;}
+
+
+PORTDbits.RD0 = 1;
+Delay();
+PORTDbits.RD0 = 0;
+Delay();
+
+
+if(endereco&0b00000001){PORTDbits.RD4=1;}
+else {PORTDbits.RD4=0;}
+if(endereco&0b00000010){PORTDbits.RD5=1;}
+else {PORTDbits.RD5=0;}
+if(endereco&0b00000100){PORTDbits.RD6=1;}
+else {PORTDbits.RD6=0;}
+if(endereco&0b00001000){PORTDbits.RD7=1;}
+else {PORTDbits.RD7=0;}
+
+
+PORTDbits.RD0 = 1;
+Delay();
+PORTDbits.RD0 = 0;
+Delay();
+}
+
+# 280
+void PosicaoCursorLCD(unsigned char linha, unsigned char coluna)
+{
+
+# 288
+unsigned char EnderecoLCD = 0x00;
+
+coluna--;
+
+if (coluna >= 0)
+{
+
+
+switch (linha)
+{
+case 1:
+EnderecoLCD = 0x00 + coluna;
+EnderecoCursor(EnderecoLCD);
+break;
+
+case 2:
+EnderecoLCD = 0x40 + coluna;
+EnderecoCursor(EnderecoLCD);
+break;
+
+case 3:
+EnderecoLCD = 0x14 + coluna;
+EnderecoCursor(EnderecoLCD);
+break;
+
+case 4:
+EnderecoLCD = 0x54 + coluna;
+EnderecoCursor(EnderecoLCD);
+break;
+
+default:
+EnderecoLCD = 0x00;
+break;
+}
+}
+else
+{
+EnderecoLCD = 0x00;
+}
+}
+
+# 339
+void EscreveCaractereLCD(char data)
+{
+
+PORTDbits.RD2 = 0;
+PORTDbits.RD1 = 1;
+PORTDbits.RD0 = 0;
+
+
+if(data&0b00010000){PORTDbits.RD4=1;}
+else {PORTDbits.RD4=0;}
+if(data&0b00100000){PORTDbits.RD5=1;}
+else {PORTDbits.RD5=0;}
+if(data&0b01000000){PORTDbits.RD6=1;}
+else {PORTDbits.RD6=0;}
+if(data&0b10000000){PORTDbits.RD7=1;}
+else {PORTDbits.RD7=0;}
+
+
+PORTDbits.RD0 = 1;
+Delay();
+PORTDbits.RD0 = 0;
+Delay();
+
+
+
+if(data&0b00000001){PORTDbits.RD4=1;}
+else {PORTDbits.RD4=0;}
+if(data&0b00000010){PORTDbits.RD5=1;}
+else {PORTDbits.RD5=0;}
+if(data&0b00000100){PORTDbits.RD6=1;}
+else {PORTDbits.RD6=0;}
+if(data&0b00001000){PORTDbits.RD7=1;}
+else {PORTDbits.RD7=0;}
+
+
+PORTDbits.RD0 = 1;
+Delay();
+PORTDbits.RD0 = 0;
+Delay();
+}
+
+# 391
+void EscreveInteiroLCD(int valor)
+{
+char texto[7] = "000000";
+itoa(texto,valor, 10);
+EscreveFraseRamLCD(texto);
+}
+
+# 412
+void EscreveFloatLCD(float valor, char formatacao)
+{
+int status;
+char *texto;
+char i = 0;
+
+texto = ftoa(valor,&status);
+
+while(i<=formatacao)
+{
+EscreveCaractereLCD(texto[i]);
+i++;
+}
+}
+
+# 438
+void EscreveFraseRamLCD(char *buffer)
+{
+while(*buffer)
+{
+EscreveCaractereLCD(*buffer);
+buffer++;
+}
+}
+
+# 457
+void EscreveFraseLCD(const char *buffer)
+{
+while(*buffer)
+{
+EscreveCaractereLCD(*buffer);
+buffer++;
+}
+}
+
+# 481
+void CriaCaractereLCD(unsigned char endereco, const char *buffer)
+{
+unsigned char cmd;
+unsigned char n = 0;
+
+
+
+endereco = endereco & 0b00000111;
+
+switch (endereco)
+{ case 0: cmd = 0b01000000; break;
+case 1: cmd = 0b01001000; break;
+case 2: cmd = 0b01010000; break;
+case 3: cmd = 0b01011000; break;
+case 4: cmd = 0b01100000; break;
+case 5: cmd = 0b01101000; break;
+case 6: cmd = 0b01110000; break;
+case 7: cmd = 0b01111000; break;
+default:cmd = 0b01000000; break;
+}
+
+EscreveComandoLCD(cmd);
+
+
+for(n=0; n<8; n++)
+{
+EscreveCaractereLCD(*buffer);
+buffer++;
+}
+
+
+
+EnderecoCursor(0x00);
+
 }
