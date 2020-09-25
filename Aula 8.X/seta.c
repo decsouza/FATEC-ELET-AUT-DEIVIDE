@@ -12,6 +12,9 @@
  * direção acionados por botões.
  Change History:
  1.0   18/09/2020  Versão inicial
+ 1.1   29/09/2020  Inclusão do uso do terceiro botão com a funcionalidade da 
+ * luz de advertência
+ * 
  
 *******************************************************************************/
 
@@ -42,6 +45,7 @@ void delay_ms(unsigned int temodeatraso);
 
 #define botaoEsq PORTEbits.RE0
 #define botaoDir PORTEbits.RE1
+#define botaoPiscaPisca PORTEbits.RE2 // botão advertência
 
 /******************************************************************************               
 * Funcao:   void main(void)
@@ -97,7 +101,28 @@ void main(void)
             setaDirC = 1;
             setaDirD = 1;
             delay_ms(100);            
-        }        
+        }   
+            if(botaoPiscaPisca == 0) // botão advertência
+        {
+            setaDirA = 0;
+            setaDirB = 0;
+            setaDirC = 0;
+            setaDirD = 0;
+            setaEsqA = 0;
+            setaEsqB = 0;
+            setaEsqC = 0;
+            setaEsqD = 0;
+            delay_ms(500);  
+            setaDirA = 1;
+            setaDirB = 1;
+            setaDirC = 1;
+            setaDirD = 1;
+            setaEsqA = 1;
+            setaEsqB = 1;
+            setaEsqC = 1;
+            setaEsqD = 1;
+            delay_ms(500);  
+        }   
     }
     return;
 }

@@ -59,9 +59,9 @@
 [v _EscreveCaractereLCD EscreveCaractereLCD `(v  1 e 1 0 ]
 "438
 [v _EscreveFraseRamLCD EscreveFraseRamLCD `(v  1 e 1 0 ]
-"53 C:\Users\Deivide_w8\Documents\GitHub\FATEC-ELET-AUT-DEIVIDE\Aula 8.X\seta.c
+"54 C:\Users\Deivide_w8\Documents\GitHub\FATEC-ELET-AUT-DEIVIDE\Aula 8.X\seta.c
 [v _main main `(v  1 e 1 0 ]
-"105
+"127
 [v _delay_ms delay_ms `(v  1 e 1 0 ]
 "2418 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f4550.h
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
@@ -163,14 +163,14 @@
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 "6497
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
-"53 C:\Users\Deivide_w8\Documents\GitHub\FATEC-ELET-AUT-DEIVIDE\Aula 8.X\seta.c
+"54 C:\Users\Deivide_w8\Documents\GitHub\FATEC-ELET-AUT-DEIVIDE\Aula 8.X\seta.c
 [v _main main `(v  1 e 1 0 ]
 {
-"103
+"125
 } 0
-"105
+"127
 [v _delay_ms delay_ms `(v  1 e 1 0 ]
 {
 [v delay_ms@tempodeatraso tempodeatraso `ui  1 p 2 0 ]
-"110
+"132
 } 0

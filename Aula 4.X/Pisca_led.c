@@ -46,7 +46,6 @@ void main()
     ADCON1 = 0X0F; // Define somente as entradas digitais
     TRISB = 0X00; // Define todos os pinos B como saídas 
     LATB = 0XFF;
-    PORTB = 0X00;
     
     while(1){
         RB7 = 1;

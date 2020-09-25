@@ -6,8 +6,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
 "3033
 [v _LATB `Vuc ~T0 @X0 0 e@3978 ]
-"2418
-[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
 "2424
 [s S102 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S102 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -3634,63 +3632,60 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Pisca_led.c: 48: LATB = 0XFF;
 "48
 [e = _LATB -> -> 255 `i `uc ]
-[; ;Pisca_led.c: 49: PORTB = 0X00;
-"49
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;Pisca_led.c: 51: while(1){
-"51
+[; ;Pisca_led.c: 50: while(1){
+"50
 [e :U 369 ]
 {
-[; ;Pisca_led.c: 52: PORTBbits.RB7 = 1;
-"52
+[; ;Pisca_led.c: 51: PORTBbits.RB7 = 1;
+"51
 [e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
-[; ;Pisca_led.c: 53: delay_ms(500);
+[; ;Pisca_led.c: 52: delay_ms(500);
+"52
+[e ( _delay_ms (1 -> -> 500 `i `ui ]
+[; ;Pisca_led.c: 53: PORTBbits.RB7 = 0;
 "53
-[e ( _delay_ms (1 -> -> 500 `i `ui ]
-[; ;Pisca_led.c: 54: PORTBbits.RB7 = 0;
-"54
 [e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
-[; ;Pisca_led.c: 55: delay_ms(500);
-"55
+[; ;Pisca_led.c: 54: delay_ms(500);
+"54
 [e ( _delay_ms (1 -> -> 500 `i `ui ]
-"56
+"55
 }
 [e :U 368 ]
-"51
+"50
 [e $U 369  ]
 [e :U 370 ]
+[; ;Pisca_led.c: 55: }
 [; ;Pisca_led.c: 56: }
-[; ;Pisca_led.c: 58: }
-"58
+"56
 [e :UE 367 ]
 }
-"71
+"69
 [v _delay_ms `(v ~T0 @X0 1 ef1`ui ]
-"72
+"70
 {
-[; ;Pisca_led.c: 71: void delay_ms(unsigned int tempodeatraso)
-[; ;Pisca_led.c: 72: {
+[; ;Pisca_led.c: 69: void delay_ms(unsigned int tempodeatraso)
+[; ;Pisca_led.c: 70: {
 [e :U _delay_ms ]
-"71
+"69
 [v _tempodeatraso `ui ~T0 @X0 1 r1 ]
-"72
+"70
 [f ]
-[; ;Pisca_led.c: 73: while(--tempodeatraso){
-"73
+[; ;Pisca_led.c: 71: while(--tempodeatraso){
+"71
 [e $U 372  ]
 [e :U 373 ]
 {
-[; ;Pisca_led.c: 74: _delay((unsigned long)((1)*(48000000/4000.0)));
-"74
+[; ;Pisca_led.c: 72: _delay((unsigned long)((1)*(48000000/4000.0)));
+"72
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"75
+"73
 }
 [e :U 372 ]
-"73
+"71
 [e $ != =- _tempodeatraso -> -> 1 `i `ui -> -> 0 `i `ui 373  ]
 [e :U 374 ]
-[; ;Pisca_led.c: 75: }
-[; ;Pisca_led.c: 76: }
-"76
+[; ;Pisca_led.c: 73: }
+[; ;Pisca_led.c: 74: }
+"74
 [e :UE 371 ]
 }

@@ -4878,7 +4878,6 @@ void main()
 ADCON1 = 0X0F;
 TRISB = 0X00;
 LATB = 0XFF;
-PORTB = 0X00;
 
 while(1){
 PORTBbits.RB7 = 1;
@@ -4886,10 +4885,9 @@ delay_ms(500);
 PORTBbits.RB7 = 0;
 delay_ms(500);
 }
-
 }
 
-# 71
+# 69
 void delay_ms(unsigned int tempodeatraso)
 {
 while(--tempodeatraso){
