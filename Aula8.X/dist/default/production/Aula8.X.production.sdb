@@ -1,0 +1,344 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"492 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftoa.c
+[v _ftoa ftoa `(*.39uc  1 e 2 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\itoa.c
+[v _itoa itoa `(*.39uc  1 e 2 0 ]
+"17
+[v _utoa utoa `(*.39uc  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"35 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"54 C:\Users\Deivide_w8\Documents\GitHub\FATEC-ELETRONICA-731923022-DEIVIDE\Aula8.X\displayLCD.c
+[v _Delay Delay `(v  1 e 1 0 ]
+"80
+[v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
+"172
+[v _EscreveComandoLCD EscreveComandoLCD `(v  1 e 1 0 ]
+"229
+[v _EnderecoCursor EnderecoCursor `(v  1 e 1 0 ]
+"280
+[v _PosicaoCursorLCD PosicaoCursorLCD `(v  1 e 1 0 ]
+"339
+[v _EscreveCaractereLCD EscreveCaractereLCD `(v  1 e 1 0 ]
+"391
+[v _EscreveInteiroLCD EscreveInteiroLCD `(v  1 e 1 0 ]
+"438
+[v _EscreveFraseRamLCD EscreveFraseRamLCD `(v  1 e 1 0 ]
+"47 C:\Users\Deivide_w8\Documents\GitHub\FATEC-ELETRONICA-731923022-DEIVIDE\Aula8.X\intext.c
+[v _main main `(v  1 e 1 0 ]
+"95
+[v _delay_ms delay_ms `(v  1 e 1 0 ]
+"102
+[v _InterrupcoesAlta InterrupcoesAlta `IIH(v  1 e 1 0 ]
+"2418 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f4550.h
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+[s S299 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"2448
+[s S308 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 PGM 1 0 :1:5 
+`uc 1 PGC 1 0 :1:6 
+`uc 1 PGD 1 0 :1:7 
+]
+[s S316 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S319 . 1 `S299 1 . 1 0 `S308 1 . 1 0 `S316 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES319  1 e 1 @3969 ]
+[s S34 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"2699
+[s S74 . 1 `uc 1 SPP0 1 0 :1:0 
+`uc 1 SPP1 1 0 :1:1 
+`uc 1 SPP2 1 0 :1:2 
+`uc 1 SPP3 1 0 :1:3 
+`uc 1 SPP4 1 0 :1:4 
+`uc 1 SPP5 1 0 :1:5 
+`uc 1 SPP6 1 0 :1:6 
+`uc 1 SPP7 1 0 :1:7 
+]
+[s S83 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 SS2 1 0 :1:7 
+]
+[u S86 . 1 `S34 1 . 1 0 `S74 1 . 1 0 `S83 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES86  1 e 1 @3971 ]
+"3580
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+[s S25 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"3986
+[u S43 . 1 `S25 1 . 1 0 `S34 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES43  1 e 1 @3989 ]
+"6497
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+[s S245 . 1 `uc 1 INT1IF 1 0 :1:0 
+`uc 1 INT2IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 INT1IE 1 0 :1:3 
+`uc 1 INT2IE 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 INT1IP 1 0 :1:6 
+`uc 1 INT2IP 1 0 :1:7 
+]
+"8304
+[s S254 . 1 `uc 1 INT1F 1 0 :1:0 
+`uc 1 INT2F 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 INT1E 1 0 :1:3 
+`uc 1 INT2E 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 INT1P 1 0 :1:6 
+`uc 1 INT2P 1 0 :1:7 
+]
+[u S263 . 1 `S245 1 . 1 0 `S254 1 . 1 0 ]
+[v _INTCON3bits INTCON3bits `VES263  1 e 1 @4080 ]
+[s S196 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"8476
+[s S205 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S214 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S218 . 1 `S196 1 . 1 0 `S205 1 . 1 0 `S214 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES218  1 e 1 @4082 ]
+"9362
+[v _INT0IE INT0IE `VEb  1 e 0 @32660 ]
+"9364
+[v _INT0IF INT0IF `VEb  1 e 0 @32657 ]
+"9372
+[v _INT1IE INT1IE `VEb  1 e 0 @32643 ]
+"9374
+[v _INT1IF INT1IF `VEb  1 e 0 @32640 ]
+"44 C:\Users\Deivide_w8\Documents\GitHub\FATEC-ELETRONICA-731923022-DEIVIDE\Aula8.X\intext.c
+[v _contador contador `uc  1 e 1 0 ]
+"45
+[v _contadorB contadorB `uc  1 e 1 0 ]
+"47
+[v _main main `(v  1 e 1 0 ]
+{
+"51
+[v main@Texto_2 Texto_2 `C[17]uc  1 a 17 51 ]
+"50
+[v main@Texto_1 Texto_1 `C[17]uc  1 a 17 34 ]
+"49
+[v main@Texto_0 Texto_0 `C[17]uc  1 a 17 17 ]
+"52
+[v main@Texto_3 Texto_3 `C[17]uc  1 a 17 0 ]
+"47
+[v main@F3939 F3939 `C[17]uc  1 s 17 F3939 ]
+"49
+[v main@F3941 F3941 `C[17]uc  1 s 17 F3941 ]
+"50
+[v main@F3943 F3943 `C[17]uc  1 s 17 F3943 ]
+"51
+[v main@F3945 F3945 `C[17]uc  1 s 17 F3945 ]
+"93
+} 0
+"95
+[v _delay_ms delay_ms `(v  1 e 1 0 ]
+{
+[v delay_ms@tempodeatraso tempodeatraso `ui  1 p 2 15 ]
+"100
+} 0
+"280 C:\Users\Deivide_w8\Documents\GitHub\FATEC-ELETRONICA-731923022-DEIVIDE\Aula8.X\displayLCD.c
+[v _PosicaoCursorLCD PosicaoCursorLCD `(v  1 e 1 0 ]
+{
+[v PosicaoCursorLCD@linha linha `uc  1 a 1 wreg ]
+"288
+[v PosicaoCursorLCD@EnderecoLCD EnderecoLCD `uc  1 a 1 20 ]
+"280
+[v PosicaoCursorLCD@linha linha `uc  1 a 1 wreg ]
+[v PosicaoCursorLCD@coluna coluna `uc  1 p 1 18 ]
+"288
+[v PosicaoCursorLCD@linha linha `uc  1 a 1 19 ]
+"327
+} 0
+"229
+[v _EnderecoCursor EnderecoCursor `(v  1 e 1 0 ]
+{
+[v EnderecoCursor@endereco endereco `uc  1 a 1 wreg ]
+[v EnderecoCursor@endereco endereco `uc  1 a 1 wreg ]
+"232
+[v EnderecoCursor@endereco endereco `uc  1 a 1 17 ]
+"266
+} 0
+"391
+[v _EscreveInteiroLCD EscreveInteiroLCD `(v  1 e 1 0 ]
+{
+"393
+[v EscreveInteiroLCD@texto texto `[7]uc  1 a 7 41 ]
+"391
+[v EscreveInteiroLCD@valor valor `i  1 p 2 39 ]
+"392
+[v EscreveInteiroLCD@F4004 F4004 `[7]uc  1 s 7 F4004 ]
+"396
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\itoa.c
+[v _itoa itoa `(*.39uc  1 e 2 0 ]
+{
+"6
+[v itoa@cp cp `*.39uc  1 a 2 37 ]
+"4
+[v itoa@buf buf `*.39uc  1 p 2 31 ]
+[v itoa@val val `i  1 p 2 33 ]
+[v itoa@base base `i  1 p 2 35 ]
+"14
+} 0
+"17
+[v _utoa utoa `(*.39uc  1 e 2 0 ]
+{
+"19
+[v utoa@v v `ui  1 a 2 28 ]
+"20
+[v utoa@c c `uc  1 a 1 30 ]
+"17
+[v utoa@buf buf `*.39uc  1 p 2 22 ]
+[v utoa@val val `ui  1 p 2 24 ]
+[v utoa@base base `i  1 p 2 26 ]
+"37
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 19 ]
+"8
+[v ___lwmod@dividend dividend `ui  1 p 2 15 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 17 ]
+"26
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 19 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 21 ]
+"8
+[v ___lwdiv@dividend dividend `ui  1 p 2 15 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 17 ]
+"31
+} 0
+"438 C:\Users\Deivide_w8\Documents\GitHub\FATEC-ELETRONICA-731923022-DEIVIDE\Aula8.X\displayLCD.c
+[v _EscreveFraseRamLCD EscreveFraseRamLCD `(v  1 e 1 0 ]
+{
+[v EscreveFraseRamLCD@buffer buffer `*.39uc  1 p 2 18 ]
+"445
+} 0
+"339
+[v _EscreveCaractereLCD EscreveCaractereLCD `(v  1 e 1 0 ]
+{
+[v EscreveCaractereLCD@data data `uc  1 a 1 wreg ]
+[v EscreveCaractereLCD@data data `uc  1 a 1 wreg ]
+"342
+[v EscreveCaractereLCD@data data `uc  1 a 1 17 ]
+"378
+} 0
+"80
+[v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
+{
+"162
+} 0
+"172
+[v _EscreveComandoLCD EscreveComandoLCD `(v  1 e 1 0 ]
+{
+[v EscreveComandoLCD@cmd cmd `uc  1 a 1 wreg ]
+[v EscreveComandoLCD@cmd cmd `uc  1 a 1 wreg ]
+"175
+[v EscreveComandoLCD@cmd cmd `uc  1 a 1 17 ]
+"216
+} 0
+"54
+[v _Delay Delay `(v  1 e 1 0 ]
+{
+"56
+[v Delay@Cnt2 Cnt2 `uc  1 a 1 16 ]
+[v Delay@Cnt1 Cnt1 `uc  1 a 1 15 ]
+"66
+} 0
+"102 C:\Users\Deivide_w8\Documents\GitHub\FATEC-ELETRONICA-731923022-DEIVIDE\Aula8.X\intext.c
+[v _InterrupcoesAlta InterrupcoesAlta `IIH(v  1 e 1 0 ]
+{
+"115
+} 0
