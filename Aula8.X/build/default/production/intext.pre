@@ -4740,6 +4740,66 @@ extern __nonreentrant void _delay3(unsigned char);
 # 4 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\__size_t.h"
 typedef unsigned size_t;
 
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdlib.h"
 typedef unsigned short wchar_t;
 
@@ -4844,8 +4904,7 @@ void delay_ms(unsigned int tempodeatraso);
 void interrupt high_priority InterrupcoesAlta(void);
 
 # 44
-unsigned char contador;
-unsigned char contadorB;
+unsigned char contador = 0;
 
 void main(void) {
 
@@ -4854,9 +4913,10 @@ const unsigned char Texto_1[]="  INTERRUPCOES  ";
 const unsigned char Texto_2[]="CONTADOR =      ";
 const unsigned char Texto_3[]="                ";
 
-ADCON1 = 0X0F;
+ADCON1 = 0XFF;
 TRISB = 0X03;
-PORTB = 0X0F;
+TRISE = 0XFF;
+LATB = 0XFF;
 
 
 
@@ -4864,9 +4924,12 @@ PORTB = 0X0F;
 INTCONbits.RBIE = 0;
 INTCONbits.INT0IE = 1;
 INTCON3bits.INT1IE = 1;
+
 INTCONbits.GIE = 1;
+INTCONbits.GIEH = 1;
 
-
+IPEN = 0;
+INTCON2bits.INTEDG0 = 0;
 
 ConfiguraLCD();
 EscreveComandoLCD(0b00001100);
@@ -4879,15 +4942,19 @@ delay_ms(3000);
 PosicaoCursorLCD(1,1);
 EscreveFraseRamLCD(Texto_2);
 PosicaoCursorLCD(2,1);
-EscreveFraseRamLCD(Texto_2);
+EscreveFraseRamLCD(Texto_1);
+
 
 
 while(1){
-delay_ms(5000);
 PosicaoCursorLCD(1, 12);
 EscreveInteiroLCD(contador);
-PosicaoCursorLCD(2, 12);
-EscreveInteiroLCD(contadorB);
+if(PORTEbits.RE2 == 0){
+contador = 0;
+PosicaoCursorLCD(1,12);
+EscreveFraseRamLCD("0  ");
+
+}
 }
 
 
@@ -4904,6 +4971,7 @@ _delay((unsigned long)((1)*(48000000/4000.0)));
 
 void interrupt high_priority InterrupcoesAlta(void)
 {
+
 if(INT0IE && INT0IF){
 PORTBbits.RB7 = !PORTBbits.RB7;
 contador++;
@@ -4911,8 +4979,11 @@ INT0IF = 0;
 }
 if(INT1IE && INT1IF){
 PORTBbits.RB6 = !PORTBbits.RB6;
-contadorB++;
+if(contador > 0){
+contador--;
+}
 INT1IF = 0;
 }
+
 
 }
